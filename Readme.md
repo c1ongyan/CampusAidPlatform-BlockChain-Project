@@ -8,6 +8,59 @@
 
 Vue2+web3.js+truffle+Ganache+MetaMask
 
+#### 项目部署步骤：
+
+环境：
+
+需要配置好node,npm,yarn
+
+[不使用yarn也可以，相关命令替换成npm相关命令即可]
+
+安装Ganache，以及浏览器中的MetaMask插件
+
+运行步骤：
+
+1.打开Ganache GUI 选择quickstart,点击右上角齿轮设置：
+
+在workspace中add project 选中 `./truffle-config.js`，单击右上角 save and restart
+
+2.添加依赖
+
+```
+yarn add @openzeppelin/contracts -S
+```
+
+3.编译部署
+
+```
+truffle compile
+truffle migrate
+```
+
+4.运行
+
+切换到./vue目录下
+
+安装依赖
+
+```
+yarn
+```
+
+指定合约地址
+
+在Ganache的contract中找到部署的合约地址，修改vue/src/api/contract.js中的合约地址（第四行）
+
+运行
+
+```
+yarn serve
+```
+
+5.浏览器中访问：`http://localhost:8080`
+
+6.在`MetaMask`中选择连接 localhost:7545 的本地网络，并且从 ganache 中导入几个账户进去，就可以开始测试了。
+
 
 
 #### 项目创建步骤：
